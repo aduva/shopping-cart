@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<base href="/">
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	    <meta charset="utf-8" />
+	    <title>Angular 2 Shopping Cart Demo</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<link href="css/main.css" rel="stylesheet" />
+
+		<!-- 1. Load libraries -->
+		<!-- Polyfill(s) for older browsers -->
+		<script src="js/lib/core-js/client/shim.min.js"></script>
+		<script src="js/lib/zone.js/dist/zone.js"></script>
+		<script src="js/lib/reflect-metadata/Reflect.js"></script>
+		<script src="js/lib/systemjs/dist/system.src.js"></script>
+
+		<!-- 2. Configure SystemJS -->
+		<script src="js/lib/systemjs.config.js"></script>
+		<script>
+			System.import('app').then(null, console.error.bind(console));
+		</script>
+	</head>
+	<body>
+		<app></app>
+	</body>
+</html>

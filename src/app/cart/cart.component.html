@@ -1,0 +1,6 @@
+<div class="sidebar-item">
+	<cart-item *ngFor="let item of data | async" [item]="item"></cart-item>
+</div>
+<div class="sidebar-item padding-10">
+	<button class="btn btn-primary btn-lg btn-block fs-18">Pay <span class="kzt">{{sum | async}}</span></button>
+</div>

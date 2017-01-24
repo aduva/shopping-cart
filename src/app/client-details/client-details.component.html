@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-xs">
+		<div class="client-content" (click)="selected = !selected" [@flyInOut]="'in'">
+			<div class="client-content-fields">
+				<div class="client-name">
+					{{client.name}}
+				</div>
+				<div class="summary">
+					<span class="summary-inner hint-text">{{client.phone}}</span>
+				</div>
+			</div>
+			<div class="client-icons" *ngIf="false">
+				<span class="client-starred-icon client-icon">
+					<i class="fa fa-star-o"></i>
+				</span>
+			</div>
+			<div class="client-bonuses hint-text">Bonuses: <span class="kzt">5</span></div>
+		</div>
+	</div>
+	<div class="col-xs-2 padding-10" *ngIf="selected" [@flyInOut]="'in'">
+		<div class="actions btn-group btn-group-justified">
+			<!-- <a class="btn btn-success"><i class="fa fa-percent"></i></a> -->
+			<a class="btn btn-danger" (click)="delete()"><i class="fa fa-trash"></i></a>
+		</div>
+	</div>
+</div>
+

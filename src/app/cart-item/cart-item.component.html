@@ -1,0 +1,48 @@
+<div class="row between-xs content" (click)="select()">
+	<div class="col-xs">
+		<div class="row start-xs">
+			<div class="col-xs-3 col-xs end-xs" *ngIf="!editing">
+				<span class="label label-primary amount">{{item.amount}}</span>
+			</div>
+			<div class="col-xs-1 amount-x" *ngIf="!editing">x</div>
+			<div class="col-xs">
+				<div class="row">
+					<div class="col-xs-12">{{item.product.name}}</div>
+					<div class="col-xs-12" *ngIf="selected && editing" [@flyInOut]="'in'">
+						<div class="amount-input">
+							<button class="add-left btn btn-primary" (click)="add(-1)" [disabled]="tempAmount <= 1">-</button>
+							<input type="number" (keyup)="set(item.amount, item.product.price * tempAmount)" (keyup.enter)="save()" [(ngModel)]="tempAmount">
+							<button class="add-right btn btn-primary" (click)="add()">+</button>
+						</div>
+					</div>
+				</div>
+				</div>
+			
+		</div>
+	</div>
+	<div class="col-xs">
+		<div class="row">
+			<div class="col-xs-6 end-xs">
+				<div class="row">
+					<div class="col-xs-12 kzt">{{item.product.price}}</div>
+					<div class="col-xs-12 hint-text" *ngIf="item.discount > 0">-{{item.discount}}%</div>
+				</div>
+			</div>
+			<div class="col-xs-6 end-xs"><strong class="kzt">{{item.sum}}</strong></div>
+		</div>
+	</div>
+	<div class="col-xs" *ngIf="selected && !editing" [@flyInOut]="'in'">
+		<div class="actions btn-group btn-group-justified">
+			<a class="btn btn-success" (click)="edit()"><i class="fa fa-pencil"></i></a>
+			<a class="btn btn-danger" (click)="delete()"><i class="fa fa-trash"></i></a>
+			<a class="btn btn-default" (click)="cancel()"><i class="fa fa-long-arrow-right"></i></a>
+		</div>
+	</div>
+	<div class="col-xs" *ngIf="selected && editing" [@flyInOut]="'in'">
+		<div class="actions btn-group btn-group-justified">
+			<a class="btn btn-success" (click)="save()"><i class="fa fa-check"></i></a>
+			<a class="btn btn-danger" (click)="delete()"><i class="fa fa-trash"></i></a>
+			<a class="btn btn-default" (click)="cancel()"><i class="fa fa-long-arrow-right"></i></a>
+		</div>
+	</div>
+</div>

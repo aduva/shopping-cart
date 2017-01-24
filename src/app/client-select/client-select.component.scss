@@ -1,0 +1,85 @@
+$span-text-font-size: 18px;
+$span-hint-text-font-size: 13px;
+
+client-select {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	text-align: left;
+	background: #fff;
+	// z-index: 1;
+	width: 100%;
+	user-select: none;
+
+	.cs-container {
+		&:focus {
+			outline: none; /* For better accessibility add a style for this in your skin */
+		}
+
+		/* Options */
+		.cs-options {
+			position: absolute;
+			overflow: hidden;
+			width: 100%;
+			background: #fff;
+			visibility: hidden;
+			border: 1px solid #ddd;
+			border-left: none;
+			border-right: none;
+			// border-bottom-left-radius: 4px;
+			// border-bottom-right-radius: 4px;
+			box-shadow: 0 3px 6px #eee;
+			
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+
+				.hint-text {
+					font-size: $span-hint-text-font-size;
+					font-style: italic;
+					color: #7d7c7d;
+					padding: 1em;
+				}
+
+				li:hover {
+					background: #e9e9e9;
+				}
+			}
+		}
+
+		input {
+			width: 100%;
+		    height: 45px;
+			font-size: 18px;
+		    padding: 30px 10px;
+		    line-height: 1.6;
+		    background-color: #fff;
+		    border: none;
+		    border-bottom: 1px solid #ccc;
+		    outline: 0;
+
+		}
+
+		&.cs-active {
+			.cs-options {
+				visibility: visible;
+				z-index: 300;
+			}
+
+			input {
+				border-bottom: none;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+		}
+
+		&.cs-selected input:after {
+	    	content: '\2713';
+	    	margin-left: 1em;
+	    }
+	}
+
+}
+

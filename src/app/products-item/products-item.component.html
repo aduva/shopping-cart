@@ -1,0 +1,19 @@
+<div class="product-content panel" [class.product-selected]="selected" (click)="onClick()">
+	<div class="product-content-fields">
+		<span class="product-selected-icon product-icon" [class.hint-text]="!selected">
+			<i class="fa" [class.fa-square-o]="!selected" [class.fa-check-square-o]="selected"></i>
+		</span>
+		<div class="product-title">
+			{{item.name}}
+		</div>
+		<div class="summary">
+			<span class="summary-inner">{{item.description}}</span>
+		</div>
+	</div>
+	<div class="product-icons" *ngIf="false">
+		<span class="product-starred-icon product-icon">
+			<i class="fa fa-star-o"></i>
+		</span>
+	</div>
+	<div class="product-price kzt">1325</div>
+</div>

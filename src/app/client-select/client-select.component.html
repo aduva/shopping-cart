@@ -1,0 +1,16 @@
+<div class="cs-container" [class.cs-active]="active" (focusout)="focusLost()">
+	<input type="text" [(ngModel)]="searchText" (click)="focusIn()" (keyup)="changed($event)" (keyup.enter)="onEnter()" placeholder="Type client name or phone...">
+	<div class="cs-options">
+		<ul class="list-group">
+			<li class="list-group-item" *ngFor="let item of data | async" (click)="select(item)">
+					{{item.name}}
+					<span class="hint-text">7077803676</span>
+			</li>
+			
+			<p *ngIf="(data | async)?.length === 0" class="hint-text">Nothing found...</p>
+			<p *ngIf="!(data | async)" class="hint-text">Type something...</p>
+			<p *ngIf="showCreateHint | async" class="hint-text">Press Enter to create new</p>
+			
+		</ul>
+	</div>
+</div>

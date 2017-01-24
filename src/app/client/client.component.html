@@ -1,0 +1,2 @@
+<client-select *ngIf="!(selectedClient | async) || (selectedClient | async)?.id === null" [url]="'api/clients/?name=^'" (selected)="clientSelected($event)"></client-select>
+<client-details *ngIf="(selectedClient | async) && (selectedClient | async)?.id !== null" [client]="selectedClient | async" (resetClient)="resetClient()"></client-details>
