@@ -1,7 +1,7 @@
 ### Angular2 Shopping Cart Demo
 
 - Angular 2 ( 2.x )
-- Redux ( NgRx/Store - with server calls)
+- Redux ( NgRx/Store )
 - Smart & dumb
 
 ### Install / Development
